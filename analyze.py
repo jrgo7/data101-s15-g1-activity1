@@ -5,7 +5,9 @@ import matplotlib.pyplot as plt
 # =======================
 # CONFIG (EDIT THIS ONLY)
 # =======================
-DATASET_URL = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv"
+DATASET_URL = (
+    "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv"
+)
 CATEGORY_COL = "species"
 VALUE_COL = "bill_length_mm"
 OUTPUT_PATH = os.path.join("output", "chart.png")
@@ -33,7 +35,9 @@ def main():
     df_small = df_small.dropna()
 
     # Group mean by category
-    grouped = df_small.groupby(CATEGORY_COL)[VALUE_COL].mean().sort_values(ascending=False)
+    grouped = (
+        df_small.groupby(CATEGORY_COL)[VALUE_COL].mean().sort_values(ascending=False)
+    )
 
     print("\nAverage values by category:")
     print(grouped)
@@ -53,4 +57,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
